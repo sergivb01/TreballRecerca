@@ -1,0 +1,1 @@
+Aqui s'hi emmagatzemaran els diferents documents del treball (power point, PDFs, ...)
