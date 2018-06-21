@@ -1,0 +1,15 @@
+{
+  "name": "micro-unifi",
+  "version": "1.0.0",
+  "description": "Microservei controlador per a unifi",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergi Vos Bosch",
+  "license": "ISC",
+  "dependencies": {
+    "node-unifiapi": "0.0.52"
+  }
+}
