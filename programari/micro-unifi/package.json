@@ -4,12 +4,24 @@
   "description": "Microservei controlador per a unifi",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/www",
+    "dev": "nodemon bin/www"
   },
   "author": "Sergi Vos Bosch",
   "license": "ISC",
   "dependencies": {
-    "node-unifiapi": "0.0.52"
+    "node-unifiapi": "0.0.52",
+    "body-parser": "^1.18.3",
+    "consola": "^1.4.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "mongodb": "^3.0.9",
+    "mongoose": "^5.1.3",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7",
+    "socket.io": "^2.1.1"
   }
 }
