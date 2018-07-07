@@ -4,37 +4,19 @@ const express = require('express'),
 	morgan = require('morgan'),
 	fs = require('fs'),
 	path = require('path'),
-	accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' }),
-	mongoose = require('mongoose')
-
-/*mongoose.connect('mongodb://localhost/tr-sergi').then(() => {
-	log.info(`Successfuly connected to MongoDB`)
-}).catch((err) => {
-	log.error(err)
-})*/
+	accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' })
 
 morgan.token('remote-addr', (req) => { //Running under reverse proxy
 	return req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || req.connection.remoteAddress
 })
 
 app.use(
-	require('express-session')({
-		cookie: {
-			maxAge: 1800000,
-			httpOnly: true
-		},
-		rolling: true,
-		resave: true,
-		saveUninitialized: true,
-		secret: 'mashitlol'
-	}),
 	morgan('combined', { //Log saver
 		stream: accessLogStream
 	}),
 	morgan('dev'), //Log into console
 )
 
-app.use('/static', express.static(path.join(__dirname, 'public')))
 app.use('/api', require('./routes/api'))
 
 //404 handler
