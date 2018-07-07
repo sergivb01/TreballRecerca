@@ -1,15 +1,17 @@
 let unifi = require('node-unifiapi')({
-	baseUrl: 'https://127.0.0.1:8443', // The URL of the Unifi Controller
-	username: 'ubnt',
-	password: 'ubnt',
+	baseUrl: 'https://192.168.1.200:8443', // The URL of the Unifi Controller
+	username: 'root',
+	password: 'sergivb01_',
 	debug: false,
-	debugNet: false
+	debugNet: true
 });
 
 let run = () => {
 	unifi.stat_sites().then((data) => {
-		console.log(JSON.stringify(data))
+		let dat = JSON.stringify(data)
+		console.log(`Data is ${dat}`)
 	})
 }
 
-setInterval(run, 1000);
+run()
+//setInterval(run, 1000);
