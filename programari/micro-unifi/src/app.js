@@ -3,11 +3,16 @@ let unifi = require('node-unifiapi')({
 	username: 'root',
 	password: 'sergivb01_',
 	debug: false,
-	debugNet: true
+	debugNet: false
 });
 
 let run = () => {
-	unifi.stat_sites().then((data) => {
+	/*unifi.list_clients().then((data) => {
+		let dat = JSON.stringify(data)
+		console.log(`Data is ${dat}`)
+	})*/
+
+	unifi.stat_allusers().then((data) => {
 		let dat = JSON.stringify(data)
 		console.log(`Data is ${dat}`)
 	})
