@@ -8,5 +8,5 @@ Aquest repository de Github conté tots els fitxers del treball del meu treball 
  	- [ ] Crear la pàgina.
  	- [ ] Crear i carregar les dades per les gràfiques.
  	- [ ] Tauler amb dades diferents (total dispositus, hores d'ús, ...)
- - [ ] Utilitzar Docker per millorar el "deploy" del servei.
- - [ ] Crear un reverse proxy per juntar-ho tot.
+ - [x] Utilitzar Docker per millorar el "deploy" del servei.
+ - [] Crear un reverse proxy per juntar-ho tot.
