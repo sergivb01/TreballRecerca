@@ -9,5 +9,5 @@ Aquest repository de Github conté tots els fitxers del treball del meu treball 
  	- [ ] Crear i carregar les dades per les gràfiques.
  	- [ ] Tauler amb dades diferents (total dispositus, hores d'ús, ...)
  - [x] Utilitzar Docker per millorar el "deploy" del servei.
- - [] Crear un reverse proxy per juntar-ho tot.
- - [] Utilitzar variables .env (dot env) per emmagatzemar els credencials per accedir a la Cloud Key de Unifi i a la API de Mikrotik.
+ - [ ] Crear un reverse proxy per juntar-ho tot.
+ - [ ] Utilitzar variables .env (dot env) per emmagatzemar els credencials per accedir a la Cloud Key de Unifi i a la API de Mikrotik.
