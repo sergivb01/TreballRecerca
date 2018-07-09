@@ -10,6 +10,7 @@ If available in apt manager, run with --no-cache
 
 To push image:
 docker tag <image> <image>:latest
+docker push <image>
 
 To pull image:
 docker pull <image>
