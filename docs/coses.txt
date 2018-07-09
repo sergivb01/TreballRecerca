@@ -7,3 +7,9 @@ docker rm $(docker ps -a -q)
 Lightweight docker images:
 Run "rm -rf /var/lib/apt/lists/*" in the end
 If available in apt manager, run with --no-cache
+
+To push image:
+docker tag <image> <image>:latest
+
+To pull image:
+docker pull <image>
