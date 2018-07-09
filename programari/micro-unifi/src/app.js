@@ -20,13 +20,13 @@ app.use(
 app.use('/api', require('./routes/api'))
 
 //404 handler
-/*app.use((req, res, next) => {
+app.use((req, res, next) => {
 	res.json({
 		"error": true,
 		"message": "Invalid API usage or 404."
 	})
 	next()
-})*/
+})
 
 // error handler
 app.use((err, req, res, next) => {

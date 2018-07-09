@@ -17,7 +17,7 @@ let unifi = require('node-unifiapi')({
 router.get('/stats', (req, res) => {
 	unifi.stat_allusers().then((data) => {
 		res.send(data)
-	})
+	}).catch(err => res.send(err))
 })
 
 /**
@@ -28,7 +28,7 @@ router.get('/stats', (req, res) => {
 router.get('/list', (req, res) => {
 	unifi.list_clients().then((data) => {
 		res.send(data)
-	})
+	}).catch(err => res.send(err))
 })
 
 
