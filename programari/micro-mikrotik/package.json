@@ -4,9 +4,16 @@
   "description": "Microservei controlador per a mikrotik",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/www",
+    "dev": "nodemon bin/www"
   },
   "author": "Sergi Vos Bosch",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7"
+  }
 }

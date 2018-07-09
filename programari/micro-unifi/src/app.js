@@ -1,5 +1,4 @@
 const express = require('express'),
-	log = require('consola'),
 	app = express(),
 	morgan = require('morgan'),
 	fs = require('fs'),
@@ -30,7 +29,6 @@ app.use((req, res, next) => {
 
 // error handler
 app.use((err, req, res, next) => {
-	log.error(err)
 	res.json({
 		"error": true,
 		"message": err
