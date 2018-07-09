@@ -11,9 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
     "morgan": "^1.9.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "routeros-client": "^0.10.3"
   }
 }

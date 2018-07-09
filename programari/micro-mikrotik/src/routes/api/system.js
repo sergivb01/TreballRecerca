@@ -3,16 +3,6 @@ const express = require('express'),
 	os = require('os')
 
 /**
- * Get status about unifi
- *
- * @returns Data in JSON format
- */
-router.get('/status', (req, res) => {
-	res.send("sup")
-})
-
-
-/**
  * Get system information
  *
  * @returns Data in JSON format

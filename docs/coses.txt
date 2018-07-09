@@ -1,0 +1,9 @@
+Load .env file: require('dotenv').load();
+
+Cleanup docker shit:
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+Lightweight docker images:
+Run "rm -rf /var/lib/apt/lists/*" in the end
+If available in apt manager, run with --no-cache

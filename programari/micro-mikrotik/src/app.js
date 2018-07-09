@@ -33,6 +33,7 @@ app.use((err, req, res, next) => {
 		"error": true,
 		"message": err
 	})
+	console.log(err)
 })
 
 module.exports = app
