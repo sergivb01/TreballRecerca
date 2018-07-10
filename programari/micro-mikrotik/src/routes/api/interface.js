@@ -8,6 +8,28 @@ const express = require('express'),
 	})
 
 /**
+ * Get details about an specific interface
+ *
+ * @param name Name of the interface
+ *
+ * @returns Data in JSON format
+ */
+router.get('/:name/print', (req, res) => {
+	api.connect().then((client) => {
+		client.menu(`/interface/print`).get()
+			.then((results) => {
+				results.forEach(result => {
+					if (result.name === req.params.name) {
+						res.send(result)
+					}
+				})
+				api.disconnect()
+			}).catch(err => console.log(err))
+
+	}).catch(err => console.log(err))
+})
+
+/**
  * Get list of interfaces
  *
  * @returns Data in JSON format
@@ -17,29 +39,9 @@ router.get('/print', (req, res) => {
 		client.menu("/interface/print").get()
 			.then((results) => {
 				res.send(results)
+				api.disconnect()
 			}).catch(err => console.log(err))
-
 	}).catch(err => console.log(err))
 })
-
-/**
- * Get details about an specific interface
- *
- * @param name Name of the interface
- *
- * @returns Data in JSON format
- */
-//FIXME: Error: no such command prefix
-router.get('/:name/print', (req, res) => {
-	api.connect().then((client) => {
-		client.menu(`/interface/${req.params.name}/print`).get()
-			.then((results) => {
-				res.send(results)
-			}).catch(err => console.log(err))
-
-	}).catch(err => console.log(err))
-})
-
-
 
 module.exports = router
