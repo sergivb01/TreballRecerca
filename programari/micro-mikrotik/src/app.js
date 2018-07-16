@@ -3,11 +3,17 @@ const express = require('express'),
 	morgan = require('morgan'),
 	fs = require('fs'),
 	path = require('path'),
-	accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' }),
+	accessLogStream = fs.createWriteStream(
+		path.join(__dirname, '../logs/access.log'), {
+			flags: 'a', autoClose: true
+		}
+	),
 	RateLimit = require('express-rate-limit')
 
 morgan.token('remote-addr', (req) => { //Running under reverse proxy
-	return req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || req.connection.remoteAddress
+	return req.headers['x-real-ip']
+		|| req.headers['x-forwarded-for']
+		|| req.connection.remoteAddress
 })
 
 app.use(
