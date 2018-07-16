@@ -24,9 +24,20 @@ router.get('/:name/print', (req, res) => {
 					}
 				})
 				api.disconnect()
-			}).catch(err => console.log(err))
-
-	}).catch(err => console.log(err))
+			}).catch(err => {
+				console.log(err)
+				res.send({
+					"error": true,
+					"message": err
+				})
+			})
+	}).catch(err => {
+		console.log(err)
+		res.send({
+			"error": true,
+			"message": err
+		})
+	})
 })
 
 /**
@@ -40,8 +51,20 @@ router.get('/print', (req, res) => {
 			.then((results) => {
 				res.send(results)
 				api.disconnect()
-			}).catch(err => console.log(err))
-	}).catch(err => console.log(err))
+			}).catch(err => {
+				console.log(err)
+				res.send({
+					"error": true,
+					"message": err
+				})
+			})
+	}).catch(err => {
+		console.log(err)
+		res.send({
+			"error": true,
+			"message": err
+		})
+	})
 })
 
 module.exports = router
