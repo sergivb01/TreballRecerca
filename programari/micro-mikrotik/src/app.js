@@ -3,7 +3,8 @@ const express = require('express'),
 	morgan = require('morgan'),
 	fs = require('fs'),
 	path = require('path'),
-	accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' })
+	accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' }),
+	RateLimit = require('express-rate-limit')
 
 morgan.token('remote-addr', (req) => { //Running under reverse proxy
 	return req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || req.connection.remoteAddress
@@ -16,6 +17,18 @@ app.use(
 	morgan('dev'), //Log into console
 )
 
+
+let limiter = new RateLimit({
+	windowMs: 5 * (60 * 1000),
+	max: 15,
+	delayMs: 1000,
+	message: `{
+		"error": true,
+		"message": "Too many requests, please try again later."
+	}`
+})
+
+app.use(limiter)
 app.use('/api', require('./routes/api'))
 
 //404 handler
