@@ -33,7 +33,7 @@ router.get('/s/default/', (req, res, next) => {
 </body>
 
 </html>
-	`);
+	`)
 	if (req.query) {
 		req.session.mac = req.query.id
 		req.session.ap = req.query.ap

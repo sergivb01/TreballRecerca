@@ -17,7 +17,7 @@ let unifi = require('node-unifiapi')({
  */
 router.get('/status', (req, res) => {
 	unifi.stat_sites().then((data) => {
-		res.send(data);
+		res.send(data)
 	}).catch(err => res.send(err))
 })
 

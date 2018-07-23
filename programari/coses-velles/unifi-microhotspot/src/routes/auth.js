@@ -6,4 +6,4 @@ router.post('/', (req, res) => {
 	//TODO: Make something to auth
 })
 
-module.exports = router;
+module.exports = router

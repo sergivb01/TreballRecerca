@@ -19,7 +19,7 @@ router.get('/groups', (req, res) => {
 
 router.get('/status', (req, res) => {
 	unifi.stat_sites().then((data) => {
-		res.send(data);
+		res.send(data)
 	})
 })
 
@@ -64,7 +64,7 @@ router.post('/auth', (req, res) => {
 				"message": JSON.stringify(error)
 			})
 			log.error(`Error while trying to auth ${mac}! ${error}`)
-		});
+		})
 
 })
 

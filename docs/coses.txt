@@ -1,4 +1,4 @@
-Load .env file: require('dotenv').load();
+Load .env file: require('dotenv').load()
 
 Cleanup docker shit:
 docker stop $(docker ps -a -q)
