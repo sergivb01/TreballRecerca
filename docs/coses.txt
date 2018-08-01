@@ -14,3 +14,10 @@ docker push <image>
 
 To pull image:
 docker pull <image>
+
+GOOGLE AUTH:
+https://skarlso.github.io/2016/06/12/google-signin-with-go/
+https://cloud.google.com/go/getting-started/authenticate-users
+https://scotch.io/tutorials/easy-node-authentication-google
+https://cloud.google.com/nodejs/getting-started/authenticate-users
+https://www.npmjs.com/package/passport-google-auth
