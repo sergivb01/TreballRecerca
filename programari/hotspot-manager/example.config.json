@@ -1,4 +1,5 @@
 {
+	"debug": true,
 	"unifi": {
 		"baseUrl": "https://address:port",
 		"username": "username",
