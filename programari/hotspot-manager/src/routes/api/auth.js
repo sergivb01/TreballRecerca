@@ -25,10 +25,12 @@ router.post('/', (req, res) => {
 		duration = 5
 
 	if (mac == null) {
+		res.statusCode = 500
 		res.send({
 			"error": true,
 			"message": "MAC address was not submitted!"
 		})
+		return
 	}
 
 	authUser(mac, duration)
@@ -37,10 +39,13 @@ router.post('/', (req, res) => {
 				"error": false,
 				"message": JSON.stringify(data)
 			})
-		}).catch(err => res.send({
-			"error": true,
-			"message": err
-		}))
+		}).catch(err => {
+			res.statusCode = 500
+			res.send({
+				"error": true,
+				"message": err
+			})
+		})
 
 })
 
