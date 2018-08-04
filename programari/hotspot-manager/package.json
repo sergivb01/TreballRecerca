@@ -1,0 +1,22 @@
+{
+  "name": "hotspot-manager",
+  "version": "1.0.0",
+  "description": "Controlador del hotspot - Treball de Recerca Sergi Vos Bosch",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "echo TODO",
+    "dev": "echo TODO"
+  },
+  "author": "Sergi Vos Bosch",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "morgan": "^1.9.0",
+    "node-unifiapi": "0.0.52",
+    "path": "^0.12.7"
+  }
+}
