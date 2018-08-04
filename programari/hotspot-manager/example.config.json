@@ -1,0 +1,9 @@
+{
+	"unifi": {
+		"baseUrl": "https://address:port",
+		"username": "username",
+		"password": "password",
+		"debug": false,
+		"debugNet": false
+	}
+}

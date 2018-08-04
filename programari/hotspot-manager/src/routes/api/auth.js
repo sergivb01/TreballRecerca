@@ -1,13 +1,7 @@
 express = require('express'),
 	router = express.Router(),
 	r = require('node-unifiapi'),
-	unifi = r({
-		baseUrl: 'https://192.168.1.200:8443',
-		username: 'root',
-		password: 'sergivb01_',
-		debug: false,
-		debugNet: false
-	})
+	unifi = r(config.unifi)
 
 
 router.post('/', (req, res) => {
