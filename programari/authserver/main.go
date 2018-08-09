@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 
 	"golang.org/x/oauth2"
@@ -16,9 +17,9 @@ import (
 )
 
 var googleOauthConfig = &oauth2.Config{
-	RedirectURL: "http://127.0.0.1:3000/callback",
-	ClientID:/*os.Getenv("GOOGLE_CLIENT_ID")*/ "97943723947-ij93jbog1b0p0v7qmaagk52etf23f9pu.apps.googleusercontent.com",
-	ClientSecret:/*os.Getenv("GOOGLE_CLIENT_SECRET")*/ "_d3xl1zEp-IMY7Evo5Hz_hYs",
+	RedirectURL:  "http://127.0.0.1:3000/callback",
+	ClientID:     os.Getenv("GOOGLE_CLIENT_ID"),
+	ClientSecret: os.Getenv("GOOGLE_CLIENT_SECRET"),
 	Scopes: []string{
 		"https://www.googleapis.com/auth/userinfo.profile",
 		"https://www.googleapis.com/auth/userinfo.email"},
