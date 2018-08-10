@@ -3,8 +3,12 @@ express = require('express'),
 	unifi = require('../../utils/unifi')
 
 router.post('/', (req, res) => {
-	let mac = req.body.mac,
-		duration = 12 * 60
+	if (!req.user) {
+		res.redirect('/auth/google')
+		return
+	}
+
+	let mac = req.body.mac
 
 	if (mac == null) {
 		res.statusCode = 500
@@ -15,7 +19,7 @@ router.post('/', (req, res) => {
 		return
 	}
 
-	unifi.authUser(mac, duration)
+	unifi.authUser(mac, 60)
 		.then(data => {
 			res.send({
 				"error": false,

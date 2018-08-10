@@ -50,7 +50,9 @@ router.get('/auth/google/redirect', passport.authenticate('google', {
 }), (req, res) => {
 	let details = req.session.details
 
-	unifi.authUser(details.mac, 60)
+	if (details)
+		unifi.authUser(details.mac, 60)
+
 
 	res.redirect('/profile')
 })

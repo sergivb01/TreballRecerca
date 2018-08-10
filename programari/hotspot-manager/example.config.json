@@ -1,10 +1,20 @@
 {
+	"port": 80,
 	"debug": true,
 	"unifi": {
-		"baseUrl": "https://address:port",
+		"baseUrl": "https://<address>:8443",
 		"username": "username",
 		"password": "password",
 		"debug": false,
 		"debugNet": false
+	},
+	"mongodb": "mongouri",
+	"google": {
+		"clientID": "clientID",
+		"clientSecret": "clientSecret",
+		"callbackURL": "http://<address>/auth/google/redirect"
+	},
+	"security": {
+		"cookies": "<randomshit>"
 	}
 }
