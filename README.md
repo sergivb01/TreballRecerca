@@ -7,8 +7,8 @@ This project contains all files (including presentation, legal docs, software, .
 
 ## Tasks:
  - [X] Implement configuration.
- - [ ] Implement Google OAuth 2.0
- - [ ] Add MongoDB to store data.
+ - [X] Implement Google OAuth 2.0
+ - [X] Add MongoDB to store data.
  - [ ] Implement analytics system.
  - [ ] Implement news system.
  - [ ] Add web filter.
