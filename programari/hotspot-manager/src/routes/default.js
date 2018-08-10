@@ -1,41 +1,35 @@
 const express = require('express'),
 	router = express.Router(),
 	passport = require('passport'),
-	unifi = require('../utils/unifi')
+	unifi = require('../utils/unifi'),
+	User = require('../models/user')
 
 const authCheck = (req, res, next) => {
-	if (!req.user) {
-		res.redirect('/auth/login')
-	} else {
+	if (!req.user)
+		res.redirect('/auth/google')
+	else
 		next()
-	}
 }
-/*
-/guest/s/default/
-?id=78:02:f8:3e:05:b4
-&ap=78:8a:20:20:4b:2a
-&t=1533852418
-&url=https://sergivb01.me
-&ssid=sergivb01-tr
-*/
-router.get('/guest/s/default', (req, res) => {
-	let details = {
-		mac: req.query.id,
-		ap: req.query.ap,
-		url: req.query.url,
-		ssid: req.query.ssid
-	}
-	req.session.details = details
 
-	res.redirect('/auth/google')
+router.get('/', (req, res) => {
+	res.send(`<a href="/auth/google">Log in</a>`)
+})
+
+router.get('/guest/s/default', (req, res) => {
+	req.session.details = {
+		"mac": req.query.id,
+		"ap": req.query.ap,
+		"time": req.query.t,
+		"ssid": req.query.ssid,
+		"url": req.query.url
+	}
+	req.session.save()
+
+	res.redirect('/')
 })
 
 router.get('/profile', authCheck, (req, res) => {
-	res.send(req.user)
-})
-
-router.get('/auth/login', (req, res) => {
-	res.redirect('/auth/google')
+	res.send(req.session.details)
 })
 
 router.get('/auth/logout', (req, res) => {
@@ -55,7 +49,9 @@ router.get('/auth/google/redirect', passport.authenticate('google', {
 	scope: ['email profile']
 }), (req, res) => {
 	let details = req.session.details
-	unifi.authUser(details.mac, 6000)
+
+	unifi.authUser(details.mac, 60)
+
 	res.redirect('/profile')
 })
 

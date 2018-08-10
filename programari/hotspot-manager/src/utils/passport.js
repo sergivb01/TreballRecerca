@@ -17,14 +17,14 @@ passport.use(
 	new GoogleStrategy(config.google, (accessToken, refreshToken, profile, done) => {
 		let insti = profile.emails[0].value.endsWith("@ieslabisbal.cat")
 
-		console.log(`User ID ${profile.id} has email ${profile.emails} and its primary email insti = ${insti}`)
+		//console.log(`User ID ${profile.id} has email ${profile.emails} and its primary email insti = ${insti}`)
 
 		User.findOne({ googleId: profile.id }).then((currentUser) => {
 			if (!insti) done(new Error("Wrong domain!"))
 
 			if (currentUser) {
 				// already have this user
-				console.log('user is: ', currentUser)
+				//console.log('user is: ', currentUser)
 				done(null, currentUser)
 			} else {
 				new User({
@@ -33,7 +33,7 @@ passport.use(
 					email: profile.emails[0].value,
 					thumbnail: profile._json.image.url
 				}).save().then((newUser) => {
-					console.log('created new user: ', newUser)
+					//console.log('created new user: ', newUser)
 					done(null, newUser)
 				})
 			}

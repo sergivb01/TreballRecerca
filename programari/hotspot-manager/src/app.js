@@ -6,7 +6,6 @@ const express = require('express'),
 	bodyParser = require('body-parser'),
 	passport = require('passport'),
 	mongoose = require('mongoose'),
-	cookieSession = require('cookie-session'),
 	config = require('../config.json'),
 	shit = require('./utils/passport')
 
@@ -17,6 +16,16 @@ morgan.token('remote-addr', (req) => { //Running under reverse proxy
 })
 
 app.use(
+	require('express-session')({
+		cookie: {
+			maxAge: 1800000,
+			httpOnly: true
+		},
+		rolling: true,
+		resave: true,
+		saveUninitialized: true,
+		secret: 'mashitlol'
+	}),
 	morgan('combined', { //Log saver
 		stream: fs.createWriteStream(
 			path.join(__dirname, '../logs/access.log'), {
@@ -27,10 +36,6 @@ app.use(
 	morgan('dev'), //Log into console
 	bodyParser.json(),
 	bodyParser.urlencoded({ extended: true }),
-	cookieSession({
-		maxAge: 24 * 60 * 60 * 1000,
-		keys: [config.security.cookies]
-	}),
 	passport.initialize(),
 	passport.session()
 )
