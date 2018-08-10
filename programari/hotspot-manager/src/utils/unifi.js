@@ -8,7 +8,7 @@ let authUser = (mac, duration) => {
 			.then(data => {
 				resolve(data)
 
-				if (config.debug) console.log(`Client has been authed with MAC ${data.mac} in AP ${data.ap}`)
+				if (config.debug) console.log(`Client has been authed with MAC ${mac} in AP ${data.ap}`)
 			})
 			.catch(err => {
 				reject(err)

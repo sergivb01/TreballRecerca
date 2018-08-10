@@ -4,8 +4,8 @@
   "description": "Controlador del hotspot - Treball de Recerca Sergi Vos Bosch",
   "main": "src/app.js",
   "scripts": {
-    "start": "echo TODO",
-    "dev": "echo TODO"
+    "start": "node bin/www",
+    "dev": "nodemon bin/www"
   },
   "author": "Sergi Vos Bosch",
   "license": "ISC",

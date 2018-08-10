@@ -24,7 +24,7 @@ app.use(
 			}
 		)
 	}),
-	morgan('dev'), //Log into console,
+	morgan('dev'), //Log into console
 	bodyParser.json(),
 	bodyParser.urlencoded({ extended: true }),
 	cookieSession({
