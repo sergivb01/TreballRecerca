@@ -16,6 +16,7 @@ morgan.token('remote-addr', (req) => { //Running under reverse proxy
 })
 
 app.use(
+	express.static(path.join(__dirname, 'static')),
 	require('express-session')({
 		cookie: {
 			maxAge: 1800000,

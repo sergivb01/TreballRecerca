@@ -12,7 +12,8 @@ const authCheck = (req, res, next) => {
 }
 
 router.get('/', (req, res) => {
-	res.send(`<a href="/auth/google">Log in</a>`)
+	res.send('index')
+	//res.send(`<a href="/auth/google">Log in</a>`)
 })
 
 router.get('/guest/s/default', (req, res) => {
