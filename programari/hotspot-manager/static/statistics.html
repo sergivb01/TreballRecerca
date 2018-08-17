@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<section class="hero is-dark is-fullheight">
+	<section class="hero is-dark is-medium">
 		<!-- Start whole navbar + hero -->
 		<!-- Hero head: will stick at the top -->
 		<div class="hero-head">
@@ -55,15 +55,10 @@
 		<div class="hero-body">
 			<div class="container has-text-centered">
 				<h1 class="title">
-					Hotspot Login
+					Hotspot Statistics
 				</h1>
 				<h2 class="subtitle">
-					<a class="button" href="/auth/google">
-						<span class="icon is-small">
-							<i class="fab fa-google"></i>
-						</span>
-						<span>Connect</span>
-					</a>
+					General Anonymous Statistics
 				</h2>
 			</div>
 		</div>
@@ -91,46 +86,97 @@
 	<br>
 	<!-- End notifications -->
 
+	<div class="container">
+		<!-- Start general status nav -->
+		<nav class="column">
+			<p class="panel-heading">
+				General Statistics
+			</p>
 
-	<!-- Start global container -->
-	<div class="container" id="about">
-		<div class="tile is-ancestor">
-			<div class="tile is-vertical">
-				<div class="tile is-parent">
-					<article class="tile is-child notification is-primary">
-						<p class="title">
-							Qué?</p>
-						<p class="subtitle">
-							Un hotspot és una zona de cobertura Wi-Fi, en el qual diversos punts d'accés proveeixen serveis de xarxa.
-						</p>
-					</article>
-				</div>
-				<div class="tile">
-					<div class="tile is-parent is-vertical">
-						<article class="tile is-child notification is-warning">
-							<p class="title">Qui?</p>
-							<p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo culpa magnam ex recusandae exercitationem.</p>
-						</article>
-						<article class="tile is-child notification is-info">
-							<p class="title">Per què?</p>
-							<p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo culpa magnam ex recusandae exercitationem.</p>
-						</article>
+			<!-- Start statistics level -->
+			<div class="panel-content" style="margin: 20px">
+				<nav class="level">
+					<div class="level-item has-text-centered">
+						<div>
+							<p class="heading">Total Clients</p>
+							<p class="title">2,672</p>
+						</div>
 					</div>
+					<div class="level-item has-text-centered">
+						<div>
+							<p class="heading">Current Connected Clients</p>
+							<p class="title">1,782</p>
+						</div>
+					</div>
+					<div class="level-item has-text-centered">
+						<div>
+							<p class="heading">Today Connected</p>
+							<p class="title">17</p>
+						</div>
+					</div>
+					<div class="level-item has-text-centered">
+						<div>
+							<p class="heading">Total Web views</p>
+							<p class="title">27</p>
+						</div>
+					</div>
+					<div class="level-item has-text-centered">
+						<div>
+							<p class="heading">Today Web views</p>
+							<p class="title">27</p>
+						</div>
+					</div>
+				</nav>
+				<!-- End statistics level -->
+				<hr>
 
-					<div class="tile is-parent is-vertical">
-						<article class="tile is-child notification is-dark">
-							<p class="title">Com?</p>
-							<p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo culpa magnam ex recusandae exercitationem.</p>
-						</article>
-						<article class="tile is-child notification is-success">
-							<p class="title">
-								Quants?</p>
-							<p class="subtitle">Aquest hotspot disposa de 50 punts d'accés distrubuïts per tot l'institut.</p>
-						</article>
+
+				<!-- Start First col -->
+				<div class="columns">
+
+					<!-- Start Cloudflare status -->
+					<div class="column">
+						<section class="section" style="background-color: #f4f2f2">
+							<nav class="level">
+								<div class="level-left">
+									<p class="subtitle is-5">Cloudflare</p>
+								</div>
+								<div class="level-right">
+									<span class="tag is-success">Operational</span>
+								</div>
+							</nav>
+						</section>
 					</div>
+					<!-- End Cloudflare status -->
+
+					<!-- Start AWS3 status -->
+					<div class="column">
+						<section class="section" style="background-color: #f4f2f2">
+							<nav class="level">
+								<div class="level-left">
+									<p class="subtitle is-5">Amazon WS3</p>
+								</div>
+								<div class="level-right">
+									<span class="tag is-success">Operational</span>
+								</div>
+							</nav>
+						</section>
+					</div>
+					<!-- End AWS3 status -->
+
 				</div>
+				<!-- End First col -->
+
+
+
 			</div>
-		</div>
+			<!-- End panel content -->
+
+		</nav>
+		<!-- End general status nav -->
+		<br>
+	</div>
+
 	</div>
 	<!-- End global container -->
 

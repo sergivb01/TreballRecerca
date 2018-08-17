@@ -16,7 +16,6 @@ morgan.token('remote-addr', (req) => { //Running under reverse proxy
 })
 
 app.use(
-	express.static(path.join(__dirname, 'static')),
 	require('express-session')({
 		cookie: {
 			maxAge: 1800000,
@@ -45,20 +44,18 @@ mongoose.connect(config.mongodb, () =>
 	console.log('Connected to MongoDB successfuly!')
 )
 
+app.use("/assets", express.static(__dirname + "/../static/assets/"))
 app.use(require('./routes/routers'))
 
 //404 handler
 app.use(
 	(req, res, next) => {
-		res.json({
-			"error": true,
-			"message": "Invalid API usage or 404."
-		})
-		next()
+		res.sendFile(path.resolve(`static/404.html`))
+		//next()
 	}, (err, req, res, next) => {
 		res.json({
 			"error": true,
-			"message": err
+			"message": err.toString()
 		})
 		console.log(err)
 	}

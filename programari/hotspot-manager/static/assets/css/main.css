@@ -1,0 +1,33 @@
+.hero-body .container {
+	max-width: 700px;
+}
+.hero-body .title {
+	color: hsl(192,17%,99%) !important;
+}
+.hero-body .subtitle {
+	color: hsl(192,17%,99%) !important;
+  	padding-top: 2rem;
+  	line-height: 1.5;
+}
+
+footer {
+	margin-top: 10%;
+}
+
+::-webkit-scrollbar {
+		box-sizing: border-box;
+		width: 6px;
+		overflow: visible
+	}
+
+	::-webkit-scrollbar-track {
+		background: 0 0
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #757575
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #9E9E9E
+	}
