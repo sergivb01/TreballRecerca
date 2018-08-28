@@ -21,3 +21,6 @@ https://cloud.google.com/go/getting-started/authenticate-users
 https://scotch.io/tutorials/easy-node-authentication-google
 https://cloud.google.com/nodejs/getting-started/authenticate-users
 https://www.npmjs.com/package/passport-google-auth
+
+Default:
+http://127.0.0.1/guest/s/default/?id=78:02:f8:3e:05:b4&ap=78:8a:20:20:4b:2a&t=1533852418&url=https://sergivb01.me&ssid=sergivb01-tr
