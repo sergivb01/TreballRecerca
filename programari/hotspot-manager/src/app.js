@@ -37,18 +37,24 @@ app.use(
 	bodyParser.json(),
 	bodyParser.urlencoded({ extended: true }),
 	passport.initialize(),
-	passport.session()
+	passport.session(),
 )
 
 mongoose.connect(config.mongodb, () =>
 	console.log('Connected to MongoDB successfuly!')
 )
 
+app.use((req, res, next) => {
+	res.header("Access-Control-Allow-Origin", "*")
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+	next()
+})
 app.use("/assets", express.static(__dirname + "/../static/assets/"))
 app.use(require('./routes/routers'))
 
 //404 handler
 app.use(
+
 	(req, res, next) => {
 		res.sendFile(path.resolve(`static/404.html`))
 		//next()

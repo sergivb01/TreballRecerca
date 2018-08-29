@@ -1,0 +1,31 @@
+[
+	{
+		"address": "http://127.0.0.1/api/pihole/overtime",
+		"title": "Domains and Ads over time",
+		"element": "myChart",
+		"data": {
+			"domains_over_time": "Domains",
+			"ads_over_time": "Ads"
+		},
+		"scales": {
+			"xAxes": [
+				{
+					"display": true,
+					"scaleLabel": {
+						"display": true,
+						"labelString": "Hour"
+					}
+				}
+			],
+			"yAxes": [
+				{
+					"display": true,
+					"scaleLabel": {
+						"display": true,
+						"labelString": "Domains"
+					}
+				}
+			]
+		}
+	}
+]

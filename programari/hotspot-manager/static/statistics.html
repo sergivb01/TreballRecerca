@@ -8,6 +8,9 @@
 
 	<link rel="stylesheet" href="assets/css/sandstone.min.css">
 	<script defer src="assets/js/fontawesome.min.js"></script>
+	<script defer src="assets/js/main.js"></script>
+	<script src="assets/js/chart.min.js"></script>
+	<script src="assets/js/statistics.js"></script>
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -130,28 +133,11 @@
 				<!-- End statistics level -->
 				<hr>
 
-
-
-				<div class="columns">
-					<div class="column">
-						<img src="/api/secure/graph/daily" alt="Weekly stats" class="image is-4by1">
-					</div>
-					<div class="column">
-						<img src="/api/secure/graph/weekly" alt="Weekly stats" class="image is-4by1">
-					</div>
-				</div>
-
-				<div class="columns">
-					<div class="column">
-						<img src="/api/secure/graph/monthly" alt="Weekly stats" class="image is-4by1">
-					</div>
-					<div class="column">
-						<img src="/api/secure/graph/yearly" alt="Weekly stats" class="image is-4by1">
-					</div>
-				</div>
-
 			</div>
 			<!-- End panel content -->
+
+			<canvas id="myChart"></canvas>
+			<canvas id="myChart2"></canvas>
 
 		</nav>
 		<!-- End general status nav -->
