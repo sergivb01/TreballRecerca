@@ -46,14 +46,14 @@
 		"scales": {}
 	},
 	{
-		"address": "http://127.0.0.1/api/unifi",
-		"title": "Unifi APs",
+		"address": "http://127.0.0.1/api/pihole/destinations",
+		"title": "Query Destinations",
 		"type": "doughnut",
-		"element": "apUsage",
+		"element": "queryDestinations",
 		"data": {
-			"data": "Usage"
+			"forward_destinations": "Forward Destinations"
 		},
-		"label": "line",
+		"label": "char",
 		"scales": {}
 	}
 ]

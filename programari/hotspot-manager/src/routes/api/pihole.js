@@ -10,6 +10,12 @@ router.get('/', (req, res) => {
 		.pipe(res)
 })
 
+router.get('/destinations', (req, res) => {
+	return req.pipe(
+		request(`${baseURL}&getForwardDestinations`))
+		.pipe(res)
+})
+
 router.get('/overtime', (req, res) => {
 	return req.pipe(
 		request(`${baseURL}&overTimeData10mins`))

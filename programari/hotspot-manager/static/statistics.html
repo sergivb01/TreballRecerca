@@ -114,20 +114,20 @@
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
-							<p class="heading">Today Connected</p>
-							<p class="title">17</p>
+							<p class="heading">Today DNS Queries</p>
+							<p class="title" id="dns_queries_today">dns_queries_today</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
-							<p class="heading">Total Web views</p>
-							<p class="title">27</p>
+							<p class="heading">Blocked Today</p>
+							<p class="title" id="ads_blocked_today">ads_blocked_today</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
-							<p class="heading">Today Web views</p>
-							<p class="title">27</p>
+							<p class="heading">Percentage Blocked today</p>
+							<p class="title" id="ads_percentage_today">ads_percentage_today</p>
 						</div>
 					</div>
 				</nav>
@@ -138,16 +138,15 @@
 			<!-- End panel content -->
 
 			<canvas id="domainsAds"></canvas>
-
+			<hr>
 			<div class="columns">
 				<div class="column">
 					<canvas id="queryResponses"></canvas>
 				</div>
 				<div class="column">
-
+					<canvas id="queryDestinations"></canvas>
 				</div>
 			</div>
-			<canvas id="apUsage"></canvas>
 
 		</nav>
 		<!-- End general status nav -->

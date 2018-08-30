@@ -1,141 +1,51 @@
-let COLORS;
+let COLORS,
+	SUMMARIES = [
+		"dns_queries_today",
+		"ads_blocked_today",
+		"ads_percentage_today"
+	];
 
 document.addEventListener('DOMContentLoaded', () => {
 	updateColors()
-	createQueriesChart()
-	createQueriesTypesChart()
-	createAPsChart()
+	initCharts()
+	updateSummary()
 })
 
 let
-	updateColors = () => {
-		getJSON("/assets/data/colors.json", (err, data) => {
-			COLORS = data
+	updateSummary = () => {
+		fetch("/api/pihole")
+			.then((res) => {
+				return res.json()
+			})
+			.then((json) => {
+				SUMMARIES.forEach(summary => {
+					let append = summary.includes("percentage")
+					document.getElementById(summary).innerHTML = (append ? Math.round(json[summary] * 100) / 100 + "%" : json[summary])
+				})
+			})
+	}
+updateColors = () => {
+	getJSON("/assets/data/colors.json", (err, data) => {
+		COLORS = data
+	})
+},
+	initCharts = () => {
+		getJSON("/assets/data/charts.json", (err, charts) => {
+			if (err) console.error(err)
+
+			charts.forEach(chart => {
+				fetch(chart.address)
+					.then((res) => {
+						return res.json()
+					})
+					.then((json) => {
+						//testChart(json)
+						createChart(chart, json)
+					})
+			})
 		})
 	},
-	createQueriesChart = () => {
-		let details = {
-			"domains_over_time": "Domains",
-			"ads_over_time": "Ads"
-		}
-
-		fetch("http://127.0.0.1/api/pihole/overtime")
-			.then((res) => {
-				return res.json()
-			})
-			.then((json) => {
-				let data = [], c = 0
-				Object.keys(details).forEach(entry => {
-					if (c >= COLORS.length) c = 0 //Prevent getting out of colors, starting again
-
-					data.push({
-						label: details[entry],
-						fill: false,
-						backgroundColor: COLORS[c],
-						borderColor: COLORS[c],
-						data: Object.values(json[entry])
-					})
-
-					c++
-				})
-
-				let labels = Object.keys(json[Object.keys(details)[0]]).map(unixtimestamp => {
-					let date = moment.unix(unixtimestamp).toDate()
-					return date
-				})
-				createNewChart("domainsAds", "line", "Domains and Ads over time", labels, data, {
-					"xAxes": [
-						{
-							"type": "time",
-							"time": {
-								"format": "timeFormat",
-								"unitStepSize": 1,
-								"tooltipFormat": "ll HH:mm"
-							},
-							"scaleLabel": {
-								"display": true,
-								"labelString": "Date"
-							}
-						}
-					],
-					"yAxes": [
-						{
-							"scaleLabel": {
-								"display": true,
-								"labelString": "value"
-							}
-						}
-					]
-				})
-			})
-	},
-	createQueriesTypesChart = () => {
-		let details = {
-			"querytypes": "Query Types"
-		}
-
-		fetch("http://127.0.0.1/api/pihole/querytypes")
-			.then((res) => {
-				return res.json()
-			})
-			.then((json) => {
-				let data = [], c = 0, map = json[Object.keys(details)[0]]
-				delete map["ANY"]
-
-				data.push({
-					label: "test",
-					fill: false,
-					backgroundColor: COLORS.slice(0, Object.keys(map).length),
-					borderColor: COLORS.slice(0, Object.keys(map).length),
-					data: Object.values(map)
-				})
-
-				let labels = Object.keys(json[Object.keys(details)[0]])
-
-				createNewChart("queryResponses", "doughnut", "Query Types", labels, data, [])
-			})
-	},
-	createAPsChart = () => {
-		let details = {
-			"data": "Usage"
-		}
-
-		fetch("http://127.0.0.1/api/unifi")
-			.then((res) => {
-				return res.json()
-			})
-			.then((json) => {
-				let data = [], c = 0, labels = []
-
-				let map = json[Object.keys(details)[0]]
-
-
-				createNewChart("apUsage", "line", "APs usage", [], [], {
-					"xAxes": [
-						{
-							"type": "time",
-							"time": {
-								"format": "timeFormat",
-								"tooltipFormat": "ll HH:mm"
-							},
-							"scaleLabel": {
-								"display": true,
-								"labelString": "Date"
-							}
-						}
-					],
-					"yAxes": [
-						{
-							"scaleLabel": {
-								"display": true,
-								"labelString": "value"
-							}
-						}
-					]
-				})
-			})
-	},
-	/*createChart = (chart, json) => {
+	createChart = (chart, json) => {
 		let data = []
 
 		if (Object.keys(chart.data).length > 1) {
@@ -179,7 +89,7 @@ let
 		}
 
 		createNewChart(chart.element, chart.type, chart.title, labels, data, chart.scales)
-	},*/
+	},
 
 
 	createNewChart = (element, type, title, labelList, data, scalesList) => {
