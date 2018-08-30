@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="assets/css/sandstone.min.css">
 	<script defer src="assets/js/fontawesome.min.js"></script>
 	<script defer src="assets/js/main.js"></script>
+	<script src="assets/js/moment.min.js"></script>
 	<script src="assets/js/chart.min.js"></script>
 	<script src="assets/js/statistics.js"></script>
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -136,8 +137,16 @@
 			</div>
 			<!-- End panel content -->
 
-			<canvas id="myChart"></canvas>
-			<canvas id="myChart2"></canvas>
+			<canvas id="domainsAds"></canvas>
+
+			<div class="columns">
+				<div class="column">
+					<canvas id="queryResponses"></canvas>
+				</div>
+				<div class="column">
+					<canvas id="apUsage"></canvas>
+				</div>
+			</div>
 
 		</nav>
 		<!-- End general status nav -->

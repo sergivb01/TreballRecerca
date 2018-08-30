@@ -14,7 +14,9 @@ const express = require('express'),
  */
 router.get('/', (req, res) => {
 	unifi.stat_hourly_ap()
-		.then(done => res.send(done))
+		.then(done => {
+			res.send(done)
+		})
 		.catch(err => console.log('Error', err))
 })
 
