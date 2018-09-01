@@ -1,0 +1,27 @@
+{
+	"error": false,
+	"message": "Fetched pihole statistics successfuly",
+	"results": {
+		"query_types": {
+			"A (IPv4)": 83.37,
+			"AAAA (IPv6)": 15.92,
+			"ANY": 0,
+			"SRV": 0.25,
+			"SOA": 0,
+			"PTR": 0.25,
+			"TXT": 0.22
+		},
+		"clients": {
+			"unique": 16,
+			"seen": 60
+		},
+		"unique_domains": 1107,
+		"hits_history": {
+			"167537": "28",
+			"167637": "2",
+			"167737": "82",
+			"167837": "73",
+			"167937": "6"
+		}
+	}
+}

@@ -22,12 +22,6 @@ router.get('/overtime', (req, res) => {
 		.pipe(res)
 })
 
-router.get('/overtime/:type', (req, res) => {
-	return req.pipe(
-		request(`${baseURL}&overTimeData10mins`))
-		.pipe(res)
-})
-
 router.get('/topitems/:max', (req, res) => {
 	let max = req.params.max
 	if (!max || max > 25) {

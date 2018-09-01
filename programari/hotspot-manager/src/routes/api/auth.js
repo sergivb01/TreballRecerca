@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
 		return
 	}
 
-	unifi.authUser(mac, 60)
+	unifi.authUser(mac)
 		.then(data => {
 			res.send({
 				"error": false,

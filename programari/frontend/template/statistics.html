@@ -9,9 +9,10 @@
 	<link rel="stylesheet" href="assets/css/sandstone.min.css">
 	<script defer src="assets/js/fontawesome.min.js"></script>
 	<script defer src="assets/js/main.js"></script>
-	<script src="assets/js/moment.min.js"></script>
+	<script defer src="main.js"></script>
+	<!--<script src="assets/js/moment.min.js"></script>
 	<script src="assets/js/chart.min.js"></script>
-	<script src="assets/js/statistics.js"></script>
+	<script src="assets/js/statistics.js"></script>-->
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -103,31 +104,31 @@
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Total Clients</p>
-							<p class="title">2,672</p>
+							<p class="title" id="statistic-total_users">0</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Current Connected Clients</p>
-							<p class="title">1,782</p>
+							<p class="title" id="statistic-online_users">0</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Today DNS Queries</p>
-							<p class="title" id="dns_queries_today">dns_queries_today</p>
+							<p class="title" id="statistic-total_dns_queries">0</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Blocked Today</p>
-							<p class="title" id="ads_blocked_today">ads_blocked_today</p>
+							<p class="title" id="statistic-blocked_dns_queries">0</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Percentage Blocked today</p>
-							<p class="title" id="ads_percentage_today">ads_percentage_today</p>
+							<p class="title" id="statistic-blocked_dns_percentage">0</p>
 						</div>
 					</div>
 				</nav>
@@ -136,8 +137,6 @@
 
 			</div>
 			<!-- End panel content -->
-
-
 
 		</nav>
 		<!-- End general status nav -->

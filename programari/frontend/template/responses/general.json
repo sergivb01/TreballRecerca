@@ -1,0 +1,11 @@
+{
+	"error": false,
+	"message": "Fetched general statistics successfuly",
+	"results": {
+		"total_users": 50,
+		"online_users": 15,
+		"total_dns_queries": 570,
+		"blocked_dns_queries": 160,
+		"blocked_dns_percentage": 28
+	}
+}

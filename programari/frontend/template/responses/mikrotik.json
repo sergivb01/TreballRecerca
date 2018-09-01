@@ -1,0 +1,40 @@
+{
+	"error": false,
+	"message": "Fetched Mikrotik statistics successfuly",
+	"results": {
+		"interfaces": {
+			"bridge": {
+				"rx": {
+					"byte": 1,
+					"packet": 1,
+					"drop": 1,
+					"queue-drop": 1,
+					"error": 1
+				},
+				"tx": {
+					"byte": 1,
+					"packet": 1,
+					"drop": 1,
+					"queue-drop": 1,
+					"error": 1
+				}
+			},
+			"ether0": {
+				"rx": {
+					"byte": 1,
+					"packet": 1,
+					"drop": 1,
+					"queue-drop": 1,
+					"error": 1
+				},
+				"tx": {
+					"byte": 1,
+					"packet": 1,
+					"drop": 1,
+					"queue-drop": 1,
+					"error": 1
+				}
+			}
+		}
+	}
+}

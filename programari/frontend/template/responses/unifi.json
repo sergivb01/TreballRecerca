@@ -1,0 +1,25 @@
+{
+	"error": false,
+	"message": "Fetched general statistics successfuly",
+	"results": {
+		"todo": {
+			"todo": true,
+			"message": "Check out Unifi API and determine which data we may show/use - GPRD!"
+		},
+		"aps": {
+			"most_connected": {
+				"mac": "78:8a:20:20:4b:2a",
+				"alias": "Teletubbies"
+			}
+		},
+		"general": {
+			"health": 2
+		},
+		"users": {
+			"total": 16561,
+			"connected": 167,
+			"wired": 72,
+			"wireless": 95
+		}
+	}
+}

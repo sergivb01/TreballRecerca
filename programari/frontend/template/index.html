@@ -9,14 +9,12 @@
 	<link rel="stylesheet" href="assets/css/sandstone.min.css">
 	<script defer src="assets/js/fontawesome.min.js"></script>
 	<script defer src="assets/js/main.js"></script>
-	<script src="assets/js/moment.min.js"></script>
-	<script src="assets/js/chart.min.js"></script>
-	<script src="assets/js/statistics.js"></script>
+	<script defer src="main.js"></script>
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
-	<section class="hero is-dark is-medium">
+	<section class="hero is-dark is-fullheight">
 		<!-- Start whole navbar + hero -->
 		<!-- Hero head: will stick at the top -->
 		<div class="hero-head">
@@ -59,10 +57,15 @@
 		<div class="hero-body">
 			<div class="container has-text-centered">
 				<h1 class="title">
-					Hotspot Statistics
+					Hotspot Login
 				</h1>
 				<h2 class="subtitle">
-					General Anonymous Statistics
+					<a class="button" href="/auth/google">
+						<span class="icon is-small">
+							<i class="fab fa-google"></i>
+						</span>
+						<span>Connect</span>
+					</a>
 				</h2>
 			</div>
 		</div>
@@ -72,7 +75,7 @@
 
 
 
-	<!-- Start notifications -->
+	<!-- Start notificationsñ -->
 	<div class="container is-fullhd ">
 		<div class="notification has-text-centered ">
 			There are currently
@@ -90,7 +93,9 @@
 	<br>
 	<!-- End notifications -->
 
-	<div class="container">
+	<!-- Start global container -->
+	<div class="container" id="about">
+
 		<!-- Start general status nav -->
 		<nav class="column">
 			<p class="panel-heading">
@@ -103,31 +108,31 @@
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Total Clients</p>
-							<p class="title">2,672</p>
+							<p class="title" id="statistic-total_users">0</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Current Connected Clients</p>
-							<p class="title">1,782</p>
+							<p class="title" id="statistic-online_users">0</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Today DNS Queries</p>
-							<p class="title" id="dns_queries_today">dns_queries_today</p>
+							<p class="title" id="statistic-total_dns_queries">0</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Blocked Today</p>
-							<p class="title" id="ads_blocked_today">ads_blocked_today</p>
+							<p class="title" id="statistic-blocked_dns_queries">0</p>
 						</div>
 					</div>
 					<div class="level-item has-text-centered">
 						<div>
 							<p class="heading">Percentage Blocked today</p>
-							<p class="title" id="ads_percentage_today">ads_percentage_today</p>
+							<p class="title" id="statistic-blocked_dns_percentage">0</p>
 						</div>
 					</div>
 				</nav>
@@ -137,13 +142,53 @@
 			</div>
 			<!-- End panel content -->
 
-
-
 		</nav>
 		<!-- End general status nav -->
 
 
+		<div class="tile is-ancestor">
+			<div class="tile is-vertical">
+				<div class="tile is-parent">
+					<article class="tile is-child notification is-primary">
+						<p class="title">
+							Qué?</p>
+						<p class="subtitle">
+							Un hotspot és una zona de cobertura Wi-Fi, en el qual diversos punts d'accés proveeixen serveis de xarxa.
+						</p>
+					</article>
+				</div>
+				<div class="tile">
+					<div class="tile is-parent is-vertical">
+						<article class="tile is-child notification is-warning">
+							<p class="title">Qui?</p>
+							<p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo culpa magnam ex recusandae
+								exercitationem.
+							</p>
+						</article>
+						<article class="tile is-child notification is-info">
+							<p class="title">Per què?</p>
+							<p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo culpa magnam ex recusandae
+								exercitationem.
+							</p>
+						</article>
+					</div>
 
+					<div class="tile is-parent is-vertical">
+						<article class="tile is-child notification is-dark">
+							<p class="title">Com?</p>
+							<p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo culpa magnam ex recusandae
+								exercitationem.
+							</p>
+						</article>
+						<article class="tile is-child notification is-success">
+							<p class="title">
+								Quants?</p>
+							<p class="subtitle">Aquest hotspot disposa de 50 punts d'accés distrubuïts per tot l'institut.</p>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 	<!-- End global container -->

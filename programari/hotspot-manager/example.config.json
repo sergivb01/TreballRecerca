@@ -1,6 +1,7 @@
 {
 	"port": 80,
 	"debug": true,
+	"duration": 10080,
 	"unifi": {
 		"baseUrl": "https://<address>:8443",
 		"username": "username",
