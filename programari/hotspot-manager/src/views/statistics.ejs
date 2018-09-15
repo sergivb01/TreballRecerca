@@ -1,0 +1,16 @@
+<%
+layout('layouts/default')
+
+block('title', 'INS La Bisbal - Hotspot')
+block('hero_size', 'medium')
+block('hero_title', 'Hotspot Statistics')
+block('hero_content', 'General Anonymous Statistics')
+%>
+
+<% include layouts/hero  %>
+<% include includes/notification %>
+
+<div class="container">
+	<% include includes/general_stats %>
+	<% include includes/graphs %>
+</div>

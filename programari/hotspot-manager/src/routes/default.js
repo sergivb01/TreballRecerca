@@ -1,20 +1,20 @@
 const express = require('express'),
-	router = express.Router(),
-	fileUtils = require('../utils/files')
+	router = express.Router()
 
-const authCheck = (req, res, next) => {
-	if (!req.user)
-		res.redirect('/')
-	else
-		next()
+let isLoggedIn = (req, res, next) => {
+	return (req.user != null) ? next() : res.redirect('/')
 }
 
 router.get('/', (req, res) => {
-	res.sendFile(fileUtils.getFile('index'))
+	return res.render('index', {
+		"loggedIn": req.user != null
+	})
 })
 
-router.get('/statistics', (req, res) => {
-	res.sendFile(fileUtils.getFile('statistics'))
+router.get('/statistics', isLoggedIn, (req, res) => {
+	return res.render('statistics',
+		{}
+	)
 })
 
 router.get('/debug', (req, res) => {

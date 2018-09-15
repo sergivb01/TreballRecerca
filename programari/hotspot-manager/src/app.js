@@ -15,6 +15,10 @@ morgan.token('remote-addr', (req) => { //Running under reverse proxy
 		|| req.connection.remoteAddress
 })
 
+app.engine('ejs', require('ejs-blocks'))
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs')
+
 app.use(
 	require('express-session')({
 		cookie: {

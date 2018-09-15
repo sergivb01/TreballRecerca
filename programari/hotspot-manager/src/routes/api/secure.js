@@ -13,7 +13,7 @@ let arrayContainsValue = (arr, val) => {
 	return arr.indexOf(val) > -1
 }
 
-router.use('/graph/:type', (req, res) => {
+router.get('/graph/:type', (req, res) => {
 	//TODO: Check security on this
 	let type = req.params.type
 

@@ -1,0 +1,17 @@
+<%
+layout('layouts/default')
+
+block('title', 'INS La Bisbal - Hotspot')
+block('hero_size', 'fullheight')
+block('hero_title', loggedIn ? 'Logged in' : 'Hotspot Log in')
+block('hero_content', loggedIn ? 'You are currently connected' : `
+<a class="button" href="/auth/google">
+	<span class="icon is-small"><i class="fab fa-google"></i></span>
+	<span>Connect</span>
+	</a>
+`)
+%>
+
+<% include layouts/hero  %>
+<% include includes/notification %>
+<% include includes/about %>

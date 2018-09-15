@@ -1,0 +1,51 @@
+<section class="hero is-dark is-<%= blocks.hero_size %>">
+	<!-- Start whole navbar + hero -->
+	<!-- Hero head: will stick at the top -->
+	<div class="hero-head">
+		<nav class="navbar">
+			<div class="container">
+				<div class="navbar-brand">
+					<a class="navbar-item">
+						<img src="assets/img/icon.png" alt="Logo">
+					</a>
+					<span class="navbar-burger burger" data-target="navbarMenuHero11">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</div>
+				<div id="navbarMenuHero11" class="navbar-menu">
+					<div class="navbar-end">
+						<a class="navbar-item" href="/">
+							Home
+						</a>
+						<a class="navbar-item" href="/statistics">
+							Statistics
+						</a>
+						<a class="navbar-item" href="/#about">
+							About
+						</a>
+							<a class="navbar-item" href="mailto://hi@sergivb01.me?subject=Hotspot Project">
+							<span class="icon">
+								<i class="fas fa-envelope"></i>
+							</span>
+							Contact
+						</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- Hero content: will be in the middle -->
+	<div class="hero-body">
+		<div class="container has-text-centered">
+			<h1 class="title">
+				<%= blocks.hero_title  %>
+			</h1>
+			<h2 class="subtitle">
+			<%- blocks.hero_content  %>
+			</h2>
+		</div>
+	</div>
+</section>
+<!-- End whole navbar + hero -->

@@ -7,7 +7,7 @@ const GENERAL_STATISTICS = [
 ]
 
 document.addEventListener('DOMContentLoaded', () => {
-	loadJSON("/responses/general.json", (status, data) => {
+	loadJSON("http://127.0.0.1:5500/frontend/template/responses/general.json", (status, data) => {
 		console.log(status, data)
 		GENERAL_STATISTICS.map(s => s.toLowerCase()).forEach(stat => {
 			document.getElementById(`statistic-${stat}`).innerHTML = data.results[stat]

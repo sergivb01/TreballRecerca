@@ -11,11 +11,19 @@
 			"PTR": 0.25,
 			"TXT": 0.22
 		},
+		"unique_domains": 1107,
+		"blocking_pages": 1762257,
 		"clients": {
 			"unique": 16,
 			"seen": 60
 		},
-		"unique_domains": 1107,
+		"clients_history": {
+			"167537": "28",
+			"167637": "2",
+			"167737": "82",
+			"167837": "73",
+			"167937": "6"
+		},
 		"hits_history": {
 			"167537": "28",
 			"167637": "2",

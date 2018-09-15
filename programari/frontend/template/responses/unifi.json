@@ -10,6 +10,10 @@
 			"most_connected": {
 				"mac": "78:8a:20:20:4b:2a",
 				"alias": "Teletubbies"
+			},
+			"most_traffic": {
+				"mac": "78:8a:20:20:4b:2a",
+				"alias": "Teletubbies"
 			}
 		},
 		"general": {
