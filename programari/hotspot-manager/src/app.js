@@ -58,16 +58,18 @@ app.use(require('./routes/routers'))
 
 //404 handler
 app.use(
-
 	(req, res, next) => {
-		res.sendFile(path.resolve(`static/404.html`))
+		return res.render('error', {
+			"title": "404 - Not found",
+			"description": "Requested resource was not found"
+		})
 		//next()
 	}, (err, req, res, next) => {
-		res.json({
-			"error": true,
-			"message": err.toString()
+		res.render('error', {
+			"title": "Internal server error!",
+			"description": err
 		})
-		console.log(err)
+		console.error(err)
 	}
 )
 

@@ -7,13 +7,18 @@ let isLoggedIn = (req, res, next) => {
 
 router.get('/', (req, res) => {
 	return res.render('index', {
-		"loggedIn": req.user != null
+		"loggedIn": req.user != null,
+		authed: req.session.authed,
+		mac: (req.session.details != null ? req.session.details.mac : "none")
 	})
 })
 
 router.get('/statistics', isLoggedIn, (req, res) => {
 	return res.render('statistics',
-		{}
+		{
+			authed: req.session.authed,
+			mac: req.session.details.mac
+		}
 	)
 })
 

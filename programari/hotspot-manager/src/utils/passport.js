@@ -20,7 +20,7 @@ passport.use(
 		//console.log(`User ID ${profile.id} has email ${profile.emails} and its primary email insti = ${insti}`)
 
 		User.findOne({ googleId: profile.id }).then((currentUser) => {
-			if (!insti) done(new Error("Wrong domain!"))
+			if (!insti) done(new Error("Wrong domain!", "The used email is not valid"))
 
 			if (currentUser) {
 				// already have this user

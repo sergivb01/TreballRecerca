@@ -3,6 +3,7 @@ const express = require('express'),
 
 
 router.use('/', require('./default'))
+router.use('/test', require('./api/test'))
 
 router.use('/auth', require('./auth/google'))
 

@@ -1,7 +1,9 @@
 const express = require('express'),
 	router = express.Router(),
 	passport = require('passport'),
-	unifi = require('../../utils/unifi')
+	User = require('../../models/user'),
+	History = require('../../models/history')
+unifi = require('../../utils/unifi')
 
 router.get('/logout', (req, res) => {
 	req.logout()
@@ -14,19 +16,35 @@ router.get('/google', passport.authenticate('google', {
 	scope: ['email profile']
 }))
 
+let arrayContains = (arr, str) => {
+	return arr.indexOf(str) > -1
+}
+
 router.get('/google/redirect', passport.authenticate('google', {
 	hd: "ieslabisbal.cat",
 	prompt: 'select_account',
 	scope: ['email profile']
 }), (req, res) => {
-	let details = req.session.details
+	let details = req.session.details,
+		user = req.user
 
 	if (details) {
-		//TODO: Redirect to a different page with popout "You have been connected" and then to /statistics
-		unifi.authUser(details.mac, 60)
+		new History({
+			username: user.username,
+			googleId: user.googleId,
+			mac: details.mac,
+			ap: details.ap
+		}).save().then((newHistory) => {
+			console.log(newHistory)
+		})
+
+		//unifi.authUser(details.mac, 60)
 	}
 
-	res.redirect('/statistics')
+	req.session.authed = (details != null)
+	req.session.save()
+
+	return res.redirect('/statistics')
 })
 
 module.exports = router
