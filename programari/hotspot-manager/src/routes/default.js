@@ -17,7 +17,7 @@ router.get('/statistics', isLoggedIn, (req, res) => {
 	return res.render('statistics',
 		{
 			authed: req.session.authed,
-			mac: req.session.details.mac
+			mac: (req.session.details ? req.session.details.mac : null)
 		}
 	)
 })
