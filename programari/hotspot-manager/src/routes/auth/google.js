@@ -1,9 +1,9 @@
 const express = require('express'),
 	router = express.Router(),
 	passport = require('passport'),
-	User = require('../../models/user'),
-	History = require('../../models/history')
-unifi = require('../../utils/unifi')
+	config = require('../../../config.json'),
+	History = require('../../models/history'),
+	unifi = require('../../utils/unifi')
 
 router.get('/logout', (req, res) => {
 	req.logout()
@@ -31,7 +31,7 @@ router.get('/google/redirect', passport.authenticate('google', {
 			mac: details.mac,
 			ap: details.ap
 		}).save().then((newHistory) => {
-			console.log(newHistory)
+			if (config.debug) console.info(`New history for ${user.username}! ${newHistory}`)
 		})
 
 		//unifi.authUser(details.mac, 60)
