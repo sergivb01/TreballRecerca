@@ -7,13 +7,9 @@ let authUser = (mac) => {
 		unifi.netsite('/cmd/stamgr', { cmd: 'authorize-guest', mac: mac, minutes: config.duration }, {}, 'POST', 'default')
 			.then(data => {
 				resolve(data)
-
-				if (config.debug) console.log(`Client has been authed with MAC ${mac} in AP ${data.ap}`)
 			})
 			.catch(err => {
 				reject(err)
-
-				if (config.debug) console.log(`Error while trying to auth ${mac}! ${error}`)
 			})
 	})
 }

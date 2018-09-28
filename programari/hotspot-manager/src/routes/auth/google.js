@@ -34,7 +34,12 @@ router.get('/google/redirect', passport.authenticate('google', {
 			if (config.debug) console.info(`New history for ${user.username}! ${newHistory}`)
 		})
 
-		//unifi.authUser(details.mac, 60)
+		unifi.authUser(details.mac, 60)
+			.then(data => {
+				if (config.debug) console.info(`Client has been authed with MAC ${mac} in AP ${data.ap}`)
+			}).catch(err => {
+				if (config.debug) console.error(`Error while trying to auth ${mac}! ${error}`)
+			})
 	}
 
 	req.session.authed = (details != null)

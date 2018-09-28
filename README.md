@@ -9,6 +9,9 @@ This project contains all files (including presentation, legal docs, software, .
  - [X] Implement configuration.
  - [X] Implement Google OAuth 2.0
  - [X] Add MongoDB to store data.
+ - [ ] Implement logging system to handle errors in a flawless way.
+ - [ ] Clean up promises with try catch functions
+ - [ ] Document code using Insominia Client.
  - [ ] Implement analytics system.
  - [ ] Implement news system.
  - [ ] Add web filter.
