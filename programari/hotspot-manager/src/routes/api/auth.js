@@ -7,37 +7,10 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-	if (!req.user) {
-		res.redirect('/auth/google')
-		return
-	}
-
-	let mac = req.body.mac
-
-	if (mac == null) {
-		res.statusCode = 500
-		res.send({
-			"error": true,
-			"message": "MAC address was not submitted!"
-		})
-		return
-	}
-
-	unifi.authUser(mac)
-		.then(data => {
-			res.send({
-				"error": false,
-				"message": JSON.stringify(data)
-			})
-		}).catch(err => {
-			res.statusCode = 500
-			res.send({
-				"error": true,
-				"message": err
-			})
-		})
-
+	return res.send({
+		"error": true,
+		"message": "API endpoint is deprecated"
+	})
 })
-
 
 module.exports = router

@@ -12,9 +12,13 @@ const express = require('express'),
 let arrayContainsValue = (arr, val) => {
 	return arr.indexOf(val) > -1
 }
-
+/**
+ * Get a graph from Mikrotik web interface.
+ * Acts as a reverse proxy.
+ *
+ * @returns Fetched image in Mikrotik as GIF
+ */
 router.get('/graph/:type', (req, res) => {
-	//TODO: Check security on this
 	let type = req.params.type
 
 	if (type == '' || !arrayContainsValue(graphTypes, type)) {

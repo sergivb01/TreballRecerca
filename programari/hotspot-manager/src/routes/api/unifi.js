@@ -4,13 +4,10 @@ const express = require('express'),
 	config = require('../../../config.json'),
 	unifi = r(config.unifi)
 
-/*
-.stat_sessions(start, end, type, site) ⇒ Estadistiques
-.stat_daily_site(start, end, attrs, site) ⇒ Estadistiques site (no util)
-.stat_hourly_site(start, end, attrs, site) ⇒ Estadistiques site (no util)
-.stat_hourly_ap(start, end, attrs, site) ⇒ Estadistiques hores AP
-.stat_sta_sessions_latest(mac, limit, sort, site) ⇒ Ultimes sessions AP
-.stat_allusers(historyhours, site) ⇒ Cada usuari, estadisitques (no es pot fer servir a no ser que es netegin dades)
+/**
+ * Get Access Points statuses per-hour
+ *
+ * @returns Data in JSON format
  */
 router.get('/', (req, res) => {
 	unifi.stat_hourly_ap()
@@ -21,12 +18,22 @@ router.get('/', (req, res) => {
 		.catch(err => console.log('Error', err))
 })
 
+/**
+ * Get list of the Access Points
+ *
+ * @returns Data in JSON format
+ */
 router.get('/aps', (req, res) => {
 	unifi.list_aps()
 		.then(done => res.send(done))
 		.catch(err => console.log('Error', err))
 })
 
+/**
+ * Get health of unifi controller
+ *
+ * @returns Data in JSON
+ */
 router.get('/health', (req, res) => {
 	unifi.list_health()
 		.then(done => res.send(done))

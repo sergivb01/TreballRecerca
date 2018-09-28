@@ -16,10 +16,6 @@ router.get('/google', passport.authenticate('google', {
 	scope: ['email profile']
 }))
 
-let arrayContains = (arr, str) => {
-	return arr.indexOf(str) > -1
-}
-
 router.get('/google/redirect', passport.authenticate('google', {
 	hd: "ieslabisbal.cat",
 	prompt: 'select_account',
