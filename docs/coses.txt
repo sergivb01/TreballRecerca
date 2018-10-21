@@ -3,6 +3,7 @@ Load .env file: require('dotenv').load()
 Cleanup docker shit:
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
 
 Lightweight docker images:
 Run "rm -rf /var/lib/apt/lists/*" in the end
