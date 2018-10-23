@@ -12,7 +12,7 @@ $proto = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on" ? "https" : "htt
 // Set response header
 function setHeader($type = "x") {
     header("X-Powered-By: Treball de Recerca Sergi Vos");
-    if (isset($type) && $type === "js") header("Content-Type: application/javascript");
+    if (isset($type) && $type === "js") header("Content-Type: text/javascript; charset=UTF-8");
 }
 
 if ($currentUrlExt === "js") {
