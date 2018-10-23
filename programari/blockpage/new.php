@@ -29,7 +29,7 @@ if ($currentUrlExt === "js") {
     // Serve SVG upon receiving non $validExtTypes URL extension or query string
     // e.g: Not an iframe of a blocked domain, such as when browsing to a file/query directly
     // QoL addition: Allow the SVG to be clicked on in order to quickly show the full Block Page
-    $blockImg = '<a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="16"><defs><style>a {text-decoration: none;} circle {stroke: rgba(152,2,2,0.5); fill: none; stroke-width: 2;} rect {fill: rgba(152,2,2,0.5);} text {opacity: 0.3; font: 11px Arial;}</style></defs><circle cx="8" cy="8" r="7"/><rect x="10.3" y="-6" width="2" height="12" transform="rotate(45)"/><text x="19.3" y="12">Treball Recerca Sergi Vos</text></svg></a>';
+    $blockImg = '<a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="16"><defs><style>a {text-decoration: none;} circle {stroke: rgba(152,2,2,0.5); fill: none; stroke-width: 2;} rect {fill: rgba(152,2,2,0.5);} text {opacity: 0.3; font: 11px Arial;}</style></defs><circle cx="8" cy="8" r="7"/><rect x="10.3" y="-6" width="2" height="12" transform="rotate(45)"/><text x="19.3" y="12">TR Sergi Vos</text></svg></a>';
     exit(setHeader()."<html>
         <head><meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'/></head>
         <body>$blockImg</body>
