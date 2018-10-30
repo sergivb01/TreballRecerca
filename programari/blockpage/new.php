@@ -47,33 +47,38 @@ setHeader();
   <meta name="robots" content="noindex,nofollow"/>
   <meta http-equiv="x-dns-prefetch-control" content="off">
   <link rel="stylesheet" href="<?=$proto ?>://pi.hole/pihole/sandstone.min.css">
-<script defer src="<?=$proto ?>://pi.hole/pihole/fontawesome.min.js"></script>
+  <link rel="stylesheet" href="<?=$proto ?>://pi.hole/pihole/style.css">
+  <script defer src="<?=$proto ?>://pi.hole/pihole/fontawesome.min.js"></script>
   <title>Page Blocked - <?=$serverName ?></title>
 </head>
 <body>
-	<section class="hero is-dark is-fullheight">
-		<!-- Hero content: will be in the middle -->
-		<div class="hero-body">
-			<div class="container has-text-centered">
-				<h1 class="title">
-					Blocked Page
-				</h1>
-				<div class="subtitle">
-					<h2><?=$serverName ?> is blocked!</h2>
-					<a class="button" href="/" style="margin-top: 2%;">
-						<span class="icon is-small">
-							<i class="fas fa-home"></i>
-						</span>
-					</a>
-				</div>
-			</div>
-		</div>
+  <section class="hero is-dark is-fullheight">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          Blocked Page
+        </h1>
+        <div class="subtitle">
+          <h2><?=$serverName ?> is blocked!</h2>
+          <a class="button" href="/" style="margin-top: 2%;">
+            <span class="icon is-small">
+              <i class="fas fa-home"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	</section>
+  <footer class="footer is-marginless">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Hotspot</strong> by
+        <a href="https://sergivb01.me">Sergi Vos Bosch</a>
+      </p>
+      <p>Part de Treball de Recerca (2018-2019) de Sergi Vos Bosch.</p>
+    </div>
+  </footer>
 </body>
-<style>
-	* {
-		overflow: hidden !important
-	}
-</style>
 </html>
