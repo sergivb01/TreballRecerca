@@ -2,9 +2,18 @@ const express = require('express')
 const router = express.Router()
 const request = require('request')
 const parseXML = require('xml2js').parseString
+const POST_LIMIT = 10
 
 const parseFeed = (xml) => {
-  return xml.rss.channel[0].item[0]
+  return xml.rss.channel[0].item.slice(0, POST_LIMIT).map(post => {
+    return {
+      "title": post.title,
+      "link": post.link,
+      "date": post.pubDate,
+      "description": post.description,
+      "content": post['content:encoded']
+    }
+  })
 }
 
 router.get('/', (req, res) => {
@@ -24,17 +33,9 @@ router.get('/', (req, res) => {
         })
       }
 
-      let parsedData = parseFeed(result)
-
       return res.send({
         "error": false,
-        "lastPost": {
-          "title": parsedData.title[0],
-          "link": parsedData.link[0],
-          "date": parsedData.pubDate[0],
-          "description": parsedData.description[0],
-          "content": parsedData['content:encoded'][0]
-        }
+        "latestPosts": parseFeed(result)
       })
     })
 
