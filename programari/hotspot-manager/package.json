@@ -24,6 +24,7 @@
     "node-unifiapi": "0.0.52",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "xml2js": "^0.4.19"
   }
 }
