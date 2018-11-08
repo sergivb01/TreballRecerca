@@ -1,0 +1,11 @@
+{
+  "error": false,
+  "message": "Successfuly fetched latest post from Wordpress Blog",
+  "data": {
+    "title": "A random post title",
+    "link": "http://agora.xtec.cat/ieslabisbal/post/1625",
+    "date": "08/11/2018 2pm EST",
+    "description": "A basic description of the post. This is a brief preview. May include HTML.",
+    "content": "The full post content. May include HTML."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "error": false,
+  "message": "Successfuly fetched list of top items",
+  "data": {
+    "top_queries": {
+      "checkip.dyndns.org": 144,
+      "avx.google.com": 117,
+      "clients4.google.com": 92,
+      "pi-hole.net": 80,
+      "android.clients.google.com": 77,
+      "aff.googleapis.com": 61,
+      "cdn.dropsapi.net": 56,
+      "www.google.com": 47,
+      "search.google.com": 45,
+      "www.googleapis.com": 43
+    },
+    "top_ads": {
+      "www.googleadservices.com": 51,
+      "ssl.google-analytics.com": 35,
+      "googleads.g.doubleclick.net": 14,
+      "www.google-analytics.com": 11,
+      "de.sitestat.com": 8,
+      "de.ioam.de": 8,
+      "stags.bluekai.com": 6,
+      "image2.pubmatic.com": 6,
+      "ib.adnxs.com": 6,
+      "pixel.quantserve.com": 6
+    }
+  }
+}

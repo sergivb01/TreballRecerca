@@ -1,0 +1,9 @@
+{
+  "error": false,
+  "message": "Successfuly fetched general Unifi data",
+  "data": {
+    "connected_users": 1250,
+    "most_connected_ap": "Q7",
+    "something_else": true
+  }
+}

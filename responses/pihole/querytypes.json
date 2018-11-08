@@ -1,0 +1,12 @@
+{
+  "error": false,
+  "message": "Successfuly fetched total of query types",
+  "data": {
+    "querytypes": {
+      "A (IPv4)": 1395,
+      "AAAA (IPv6)": 1012,
+      "PTR": 20,
+      "SRV": 8
+    }
+  }
+}
