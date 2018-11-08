@@ -1,0 +1,3 @@
+[submodule "programari/hotspot"]
+	path = programari/hotspot
+	url = git@github.com:/sergivb01/tr-hotspot
